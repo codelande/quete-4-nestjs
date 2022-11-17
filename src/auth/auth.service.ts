@@ -36,7 +36,7 @@ export class AuthService {
       // user found
       // The access token will be composed by the email
       const payload = `${userData.email}`;
-      const accessToken = this.jwtService.sign(payload);
+      const accessToken = this.jwtService.sign(payload, {secret: "secret"});
 
       return {
         expires_in: 3600, // 1hour
